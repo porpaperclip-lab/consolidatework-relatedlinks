@@ -79,14 +79,13 @@
             width: 100%;
         }
 
-        /* เพิ่มสไตล์สำหรับหัวข้อใหญ่ตรงกลาง */
         .main-header {
             text-align: center;
-            font-size: 3em; /* ขนาดตัวใหญ่เด่นชัด */
+            font-size: 3em; 
             font-weight: 700;
             color: var(--primary-color);
             margin-top: 10px;
-            margin-bottom: 40px; /* ระยะห่างจากกล่องเนื้อหาด้านล่าง */
+            margin-bottom: 40px; 
             letter-spacing: 0.5px;
         }
 
@@ -96,15 +95,18 @@
             gap: 30px; 
         }
 
+        /* กล่องเนื้อหาหลัก */
         .card-box {
             background-color: var(--card-bg);
             border: 3px solid #333333; 
             border-radius: 12px;
-            padding: 40px;
+            padding: 40px; /* เว้นขอบด้านในกล่องอย่างสวยงาม */
             min-height: 400px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            box-sizing: border-box;
         }
 
+        /* หัวข้อในกล่อง (ยังคงไว้ตรงกลางตามโครงเดิม หรือปรับชิดซ้ายได้ครับ) */
         .card-box h2 {
             text-align: center;
             font-size: 2em;
@@ -114,20 +116,17 @@
             margin-bottom: 30px;
         }
 
-        .list-wrapper {
-            display: flex;
-            justify-content: center;
-        }
-
+        /* ปรับปรุงส่วนรายการให้ชิดซ้ายและเว้นระยะอย่างเหมาะสม */
         .card-box ol {
             margin: 0;
-            padding-left: 20px;
+            padding-left: 25px; /* เว้นระยะจากขอบซ้ายเพื่อให้ตัวเลขเยื้องเข้ามาพอดี */
             font-size: 1.1em;
             color: var(--text-muted);
+            text-align: left; /* บังคับให้ข้อความชิดซ้ายทั้งหมด */
         }
 
         .card-box ol li {
-            margin-bottom: 12px;
+            margin-bottom: 14px; /* เพิ่มช่องไฟระหว่างบรรทัดให้ดูสบายตาขึ้น */
         }
 
         /* ================= ตกแต่งลิงก์ในกล่องเนื้อหา ================= */
@@ -135,6 +134,7 @@
             color: var(--text-muted); 
             text-decoration: none; 
             transition: color 0.3s ease, text-decoration 0.3s ease;
+            display: inline-block;
         }
 
         .card-box ol li a:hover {
@@ -148,7 +148,7 @@
                 grid-template-columns: 1fr; 
             }
             .main-header {
-                font-size: 2.4em; /* ปรับขนาดหัวข้อลงเล็กน้อยเมื่อเปิดบนจอแท็บเล็ต/มือถือ */
+                font-size: 2.4em; 
             }
         }
 
@@ -185,26 +185,22 @@
             
             <div class="card-box">
                 <h2>Head Text</h2>
-                <div class="list-wrapper">
-                    <ol>
-                        <li><a href="#">Normal Text Link 1</a></li>
-                        <li><a href="#">Normal Text Link 2</a></li>
-                        <li><a href="#">Normal Text Link 3</a></li>
-                        <li><a href="#">Normal Text Link 4</a></li>
-                    </ol>
-                </div>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
             </div>
 
             <div class="card-box">
                 <h2>Head Text</h2>
-                <div class="list-wrapper">
-                    <ol>
-                        <li><a href="#">Normal Text Link 1</a></li>
-                        <li><a href="#">Normal Text Link 2</a></li>
-                        <li><a href="#">Normal Text Link 3</a></li>
-                        <li><a href="#">Normal Text Link 4</a></li>
-                    </ol>
-                </div>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
             </div>
 
         </div>
