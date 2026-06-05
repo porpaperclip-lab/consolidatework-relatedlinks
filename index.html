@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Two Columns Layout with Sidebar</title>
+    <title>รวม Link ในการทำงาน</title>
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* ================= ตัวแปรสีและขนาด (จากโค้ดเดิม) ================= */
+        /* ================= ตัวแปรสีและขนาด ================= */
         :root {
             --primary-color: #1a73e8;
+            --primary-hover: #1557b0; 
             --bg-color: #f0f4f8;
             --card-bg: #ffffff;
             --text-main: #333333;
@@ -23,11 +24,10 @@
             color: var(--text-main);
             line-height: 1.6;
             margin: 0;
-            /* เว้นพื้นที่ด้านซ้ายเพื่อหลบ Navbar */
             padding: 40px 20px 40px calc(var(--sidebar-width) + 40px); 
         }
 
-        /* ================= Navbar ด้านซ้าย (จากโค้ดเดิม) ================= */
+        /* ================= Navbar ด้านซ้าย ================= */
         .navbar {
             background-color: var(--card-bg);
             box-shadow: 2px 0 10px rgba(0,0,0,0.08);
@@ -72,31 +72,39 @@
             color: var(--primary-color);
         }
 
-        /* ================= เลย์เอาต์ใหม่ (อ้างอิงตามภาพ) ================= */
+        /* ================= เลย์เอาต์หลัก ================= */
         .content-container {
             max-width: 1000px;
             margin: 0 auto;
             width: 100%;
         }
 
-        /* จัดแบ่งเป็น 2 คอลัมน์ด้วย CSS Grid */
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* แบ่งครึ่ง 50/50 */
-            gap: 30px; /* ระยะห่างระหว่างกล่อง */
+        /* เพิ่มสไตล์สำหรับหัวข้อใหญ่ตรงกลาง */
+        .main-header {
+            text-align: center;
+            font-size: 3em; /* ขนาดตัวใหญ่เด่นชัด */
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-top: 10px;
+            margin-bottom: 40px; /* ระยะห่างจากกล่องเนื้อหาด้านล่าง */
+            letter-spacing: 0.5px;
         }
 
-        /* กล่องเนื้อหา (อ้างอิงเส้นกรอบจากรูปภาพ) */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 30px; 
+        }
+
         .card-box {
             background-color: var(--card-bg);
-            border: 3px solid #333333; /* ขอบหนาสีเข้มให้เหมือนในรูปภาพ */
+            border: 3px solid #333333; 
             border-radius: 12px;
             padding: 40px;
-            min-height: 400px; /* กำหนดความสูงขั้นต่ำให้กล่องดูสมดุล */
+            min-height: 400px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        /* หัวข้อตรงกลางกล่อง */
         .card-box h2 {
             text-align: center;
             font-size: 2em;
@@ -106,7 +114,6 @@
             margin-bottom: 30px;
         }
 
-        /* จัดตำแหน่งรายการ (List) ให้อยู่กึ่งกลาง แต่ตัวหนังสือชิดซ้าย */
         .list-wrapper {
             display: flex;
             justify-content: center;
@@ -123,16 +130,31 @@
             margin-bottom: 12px;
         }
 
-        /* ================= รองรับหน้าจอขนาดเล็ก (มือถือ) ================= */
+        /* ================= ตกแต่งลิงก์ในกล่องเนื้อหา ================= */
+        .card-box ol li a {
+            color: var(--text-muted); 
+            text-decoration: none; 
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .card-box ol li a:hover {
+            color: var(--primary-color); 
+            text-decoration: underline; 
+        }
+
+        /* ================= Responsive (มือถือ) ================= */
         @media (max-width: 900px) {
             .grid-layout {
-                grid-template-columns: 1fr; /* ปรับให้เรียงลงมา 1 คอลัมน์บนจอเล็ก */
+                grid-template-columns: 1fr; 
+            }
+            .main-header {
+                font-size: 2.4em; /* ปรับขนาดหัวข้อลงเล็กน้อยเมื่อเปิดบนจอแท็บเล็ต/มือถือ */
             }
         }
 
         @media (max-width: 768px) {
             body {
-                padding: 100px 20px 40px 20px;
+                padding: 120px 20px 40px 20px;
             }
             .navbar {
                 width: 100%;
@@ -154,7 +176,11 @@
         <a href="https://porpaperclip-lab.github.io/csteam-trainer/">📊 โครงสร้างผลิตภัณฑ์</a>
         <a href="https://porpaperclip-lab.github.io/emailbriefing">📧 อีเมลประกาศสำคัญ</a>
     </nav>
+
     <div class="content-container">
+        
+        <h1 class="main-header">รวม Link ในการทำงาน</h1>
+        
         <div class="grid-layout">
             
             <div class="card-box">
