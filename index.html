@@ -91,7 +91,8 @@
 
         .grid-layout {
             display: grid;
-            grid-template-columns: 1fr 1fr; 
+            /* แก้ไขตรงนี้: ปรับเป็น 3 คอลัมน์ (repeat(3, 1fr)) */
+            grid-template-columns: repeat(3, 1fr); 
             gap: 30px; 
         }
 
@@ -186,7 +187,7 @@
         <div class="grid-layout">
             
             <div class="card-box">
-                <h2>Head Text</h2>
+                <h2>Head Text 1</h2>
                 <ol>
                     <li><a href="#">Normal Text Link 1</a></li>
                     <li><a href="#">Normal Text Link 2</a></li>
@@ -196,7 +197,17 @@
             </div>
 
             <div class="card-box">
-                <h2>Head Text</h2>
+                <h2>Head Text 2</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
+            </div>
+
+            <div class="card-box">
+                <h2>Head Text 3</h2>
                 <ol>
                     <li><a href="#">Normal Text Link 1</a></li>
                     <li><a href="#">Normal Text Link 2</a></li>
