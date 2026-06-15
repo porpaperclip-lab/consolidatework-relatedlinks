@@ -91,7 +91,6 @@
 
         .grid-layout {
             display: grid;
-            /* แก้ไขตรงนี้: ปรับเป็น 3 คอลัมน์ (repeat(3, 1fr)) */
             grid-template-columns: repeat(3, 1fr); 
             gap: 30px; 
         }
@@ -101,13 +100,12 @@
             background-color: var(--card-bg);
             border: 3px solid #333333; 
             border-radius: 12px;
-            padding: 40px; /* เว้นขอบด้านในกล่องอย่างสวยงาม */
+            padding: 40px; 
             min-height: 400px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             box-sizing: border-box;
         }
 
-        /* หัวข้อในกล่อง (ยังคงไว้ตรงกลางตามโครงเดิม หรือปรับชิดซ้ายได้ครับ) */
         .card-box h2 {
             text-align: center;
             font-size: 2em;
@@ -117,17 +115,16 @@
             margin-bottom: 30px;
         }
 
-        /* ปรับปรุงส่วนรายการให้ชิดซ้ายและเว้นระยะอย่างเหมาะสม */
         .card-box ol {
             margin: 0;
-            padding-left: 25px; /* เว้นระยะจากขอบซ้ายเพื่อให้ตัวเลขเยื้องเข้ามาพอดี */
+            padding-left: 25px; 
             font-size: 1.1em;
             color: var(--text-muted);
-            text-align: left; /* บังคับให้ข้อความชิดซ้ายทั้งหมด */
+            text-align: left; 
         }
 
         .card-box ol li {
-            margin-bottom: 14px; /* เพิ่มช่องไฟระหว่างบรรทัดให้ดูสบายตาขึ้น */
+            margin-bottom: 14px; 
         }
 
         /* ================= ตกแต่งลิงก์ในกล่องเนื้อหา ================= */
@@ -208,6 +205,36 @@
 
             <div class="card-box">
                 <h2>Head Text 3</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
+            </div>
+
+            <div class="card-box">
+                <h2>Head Text 4</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
+            </div>
+
+            <div class="card-box">
+                <h2>Head Text 5</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
+            </div>
+
+            <div class="card-box">
+                <h2>Head Text 6</h2>
                 <ol>
                     <li><a href="#">Normal Text Link 1</a></li>
                     <li><a href="#">Normal Text Link 2</a></li>
