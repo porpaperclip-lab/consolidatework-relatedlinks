@@ -89,6 +89,7 @@
             letter-spacing: 0.5px;
         }
 
+        /* จัด Layout ให้เป็น 6 กล่อง (แถวละ 3) */
         .grid-layout {
             display: grid;
             grid-template-columns: repeat(3, 1fr); 
@@ -100,21 +101,72 @@
             background-color: var(--card-bg);
             border: 3px solid #333333; 
             border-radius: 12px;
-            padding: 40px; 
-            min-height: 400px; 
+            padding: 30px; /* ปรับลด padding นิดหน่อยให้สวยเมื่อกล่องถูกยุบ */
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             box-sizing: border-box;
+            align-self: start; /* ป้องกันไม่ให้กล่องอื่นยืดตามกล่องที่เปิดอยู่ */
+            transition: all 0.3s ease;
+        }
+
+        /* ================= ฟีเจอร์ยุบ/โชว์ (Details & Summary) ================= */
+        details {
+            width: 100%;
+        }
+
+        summary {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            list-style: none; /* ซ่อนลูกศร default ของเบราว์เซอร์ */
+            outline: none;
+            position: relative;
+        }
+
+        /* ซ่อนลูกศร default สำหรับ Safari */
+        summary::-webkit-details-marker {
+            display: none;
         }
 
         .card-box h2 {
+            width: 100%;
             text-align: center;
             font-size: 2em;
             font-weight: 600;
             color: var(--text-main);
-            margin-top: 0;
-            margin-bottom: 30px;
+            margin: 0;
         }
 
+        /* ไอคอนลูกศรแบบ Custom */
+        summary .icon {
+            position: absolute;
+            right: 0;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            transition: transform 0.3s ease; /* ทำให้ลูกศรหมุนสมูท */
+        }
+
+        /* เมื่อเปิดอยู่ ให้ลูกศรหมุน 180 องศา และเว้นระยะห่างด้านล่างหัวข้อ */
+        details[open] summary .icon {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            margin-bottom: 25px;
+            border-bottom: 2px dashed #e0e0e0;
+            padding-bottom: 15px;
+        }
+
+        /* แอนิเมชันตอนโชว์เนื้อหา */
+        details[open] ol {
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ================= ตกแต่งรายการ ================= */
         .card-box ol {
             margin: 0;
             padding-left: 25px; 
@@ -127,7 +179,6 @@
             margin-bottom: 14px; 
         }
 
-        /* ================= ตกแต่งลิงก์ในกล่องเนื้อหา ================= */
         .card-box ol li a {
             color: var(--text-muted); 
             text-decoration: none; 
@@ -174,7 +225,6 @@
         <a href="https://porpaperclip-lab.github.io/csteam-trainer/">📊 โครงสร้างผลิตภัณฑ์</a>
         <a href="https://porpaperclip-lab.github.io/emailbriefing">📧 อีเมลประกาศสำคัญ</a>
         <a href="https://porpaperclip-lab.github.io/consolidatework-relatedlinks/">🔗 รวม Link ในการทำงาน</a>
-        
     </nav>
 
     <div class="content-container">
@@ -184,63 +234,93 @@
         <div class="grid-layout">
             
             <div class="card-box">
-                <h2>Head Text 1</h2>
-                <ol>
-                    <li><a href="#">Normal Text Link 1</a></li>
-                    <li><a href="#">Normal Text Link 2</a></li>
-                    <li><a href="#">Normal Text Link 3</a></li>
-                    <li><a href="#">Normal Text Link 4</a></li>
-                </ol>
+                <details open>
+                    <summary>
+                        <h2>Head Text 1</h2>
+                        <span class="icon">▼</span>
+                    </summary>
+                    <ol>
+                        <li><a href="#">Normal Text Link 1</a></li>
+                        <li><a href="#">Normal Text Link 2</a></li>
+                        <li><a href="#">Normal Text Link 3</a></li>
+                        <li><a href="#">Normal Text Link 4</a></li>
+                    </ol>
+                </details>
             </div>
 
             <div class="card-box">
-                <h2>Head Text 2</h2>
-                <ol>
-                    <li><a href="#">Normal Text Link 1</a></li>
-                    <li><a href="#">Normal Text Link 2</a></li>
-                    <li><a href="#">Normal Text Link 3</a></li>
-                    <li><a href="#">Normal Text Link 4</a></li>
-                </ol>
+                <details>
+                    <summary>
+                        <h2>Head Text 2</h2>
+                        <span class="icon">▼</span>
+                    </summary>
+                    <ol>
+                        <li><a href="#">Normal Text Link 1</a></li>
+                        <li><a href="#">Normal Text Link 2</a></li>
+                        <li><a href="#">Normal Text Link 3</a></li>
+                        <li><a href="#">Normal Text Link 4</a></li>
+                    </ol>
+                </details>
             </div>
 
             <div class="card-box">
-                <h2>Head Text 3</h2>
-                <ol>
-                    <li><a href="#">Normal Text Link 1</a></li>
-                    <li><a href="#">Normal Text Link 2</a></li>
-                    <li><a href="#">Normal Text Link 3</a></li>
-                    <li><a href="#">Normal Text Link 4</a></li>
-                </ol>
+                <details>
+                    <summary>
+                        <h2>Head Text 3</h2>
+                        <span class="icon">▼</span>
+                    </summary>
+                    <ol>
+                        <li><a href="#">Normal Text Link 1</a></li>
+                        <li><a href="#">Normal Text Link 2</a></li>
+                        <li><a href="#">Normal Text Link 3</a></li>
+                        <li><a href="#">Normal Text Link 4</a></li>
+                    </ol>
+                </details>
             </div>
 
             <div class="card-box">
-                <h2>Head Text 4</h2>
-                <ol>
-                    <li><a href="#">Normal Text Link 1</a></li>
-                    <li><a href="#">Normal Text Link 2</a></li>
-                    <li><a href="#">Normal Text Link 3</a></li>
-                    <li><a href="#">Normal Text Link 4</a></li>
-                </ol>
+                <details>
+                    <summary>
+                        <h2>Head Text 4</h2>
+                        <span class="icon">▼</span>
+                    </summary>
+                    <ol>
+                        <li><a href="#">Normal Text Link 1</a></li>
+                        <li><a href="#">Normal Text Link 2</a></li>
+                        <li><a href="#">Normal Text Link 3</a></li>
+                        <li><a href="#">Normal Text Link 4</a></li>
+                    </ol>
+                </details>
             </div>
 
             <div class="card-box">
-                <h2>Head Text 5</h2>
-                <ol>
-                    <li><a href="#">Normal Text Link 1</a></li>
-                    <li><a href="#">Normal Text Link 2</a></li>
-                    <li><a href="#">Normal Text Link 3</a></li>
-                    <li><a href="#">Normal Text Link 4</a></li>
-                </ol>
+                <details>
+                    <summary>
+                        <h2>Head Text 5</h2>
+                        <span class="icon">▼</span>
+                    </summary>
+                    <ol>
+                        <li><a href="#">Normal Text Link 1</a></li>
+                        <li><a href="#">Normal Text Link 2</a></li>
+                        <li><a href="#">Normal Text Link 3</a></li>
+                        <li><a href="#">Normal Text Link 4</a></li>
+                    </ol>
+                </details>
             </div>
 
             <div class="card-box">
-                <h2>Head Text 6</h2>
-                <ol>
-                    <li><a href="#">Normal Text Link 1</a></li>
-                    <li><a href="#">Normal Text Link 2</a></li>
-                    <li><a href="#">Normal Text Link 3</a></li>
-                    <li><a href="#">Normal Text Link 4</a></li>
-                </ol>
+                <details>
+                    <summary>
+                        <h2>Head Text 6</h2>
+                        <span class="icon">▼</span>
+                    </summary>
+                    <ol>
+                        <li><a href="#">Normal Text Link 1</a></li>
+                        <li><a href="#">Normal Text Link 2</a></li>
+                        <li><a href="#">Normal Text Link 3</a></li>
+                        <li><a href="#">Normal Text Link 4</a></li>
+                    </ol>
+                </details>
             </div>
 
         </div>
