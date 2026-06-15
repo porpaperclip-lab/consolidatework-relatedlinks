@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>รวม Link ในการทำงาน</title>
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* ================= ตัวแปรสีและขนาด ================= */
@@ -81,8 +81,8 @@
 
         .main-header {
             text-align: center;
-            font-size: 2.2em; /* ปรับลดจาก 3em ให้เล็กลงกำลังดี */
-            font-weight: 600; /* ปรับลดความหนาจาก 700 (หากยังดูหนาไป ปรับเป็น 500 ได้ครับ) */
+            font-size: 2.2em;
+            font-weight: 600; 
             color: var(--primary-color);
             margin-top: 10px;
             margin-bottom: 40px; 
@@ -101,69 +101,22 @@
             background-color: var(--card-bg);
             border: 3px solid #333333; 
             border-radius: 12px;
-            padding: 30px; /* ปรับลด padding นิดหน่อยให้สวยเมื่อกล่องถูกยุบ */
+            padding: 30px; 
             box-shadow: 0 4px 10px rgba(0,0,0,0.05);
             box-sizing: border-box;
-            align-self: start; /* ป้องกันไม่ให้กล่องอื่นยืดตามกล่องที่เปิดอยู่ */
-            transition: all 0.3s ease;
+            align-self: start; 
         }
 
-        /* ================= ฟีเจอร์ยุบ/โชว์ (Details & Summary) ================= */
-        details {
-            width: 100%;
-        }
-
-        summary {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            list-style: none; /* ซ่อนลูกศร default ของเบราว์เซอร์ */
-            outline: none;
-            position: relative;
-        }
-
-        /* ซ่อนลูกศร default สำหรับ Safari */
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
+        /* ================= หัวข้อและเนื้อหาในกล่อง ================= */
         .card-box h2 {
             width: 100%;
             text-align: center;
-            font-size: 1.4em; /* ปรับลดจาก 2em ไม่ให้แย่งความสนใจจากเนื้อหา */
-            font-weight: 500; /* ปรับลดจาก 600 ให้ดูละมุนขึ้น */
+            font-size: 1.4em; 
+            font-weight: 500; 
             color: var(--text-main);
-            margin: 0;
-        }
-
-        /* ไอคอนลูกศรแบบ Custom */
-        summary .icon {
-            position: absolute;
-            right: 0;
-            font-size: 1.2em;
-            color: var(--primary-color);
-            transition: transform 0.3s ease; /* ทำให้ลูกศรหมุนสมูท */
-        }
-
-        /* เมื่อเปิดอยู่ ให้ลูกศรหมุน 180 องศา และเว้นระยะห่างด้านล่างหัวข้อ */
-        details[open] summary .icon {
-            transform: rotate(180deg);
-        }
-
-        details[open] summary {
-            margin-bottom: 25px;
-            border-bottom: 2px dashed #e0e0e0;
+            margin: 0 0 25px 0;
             padding-bottom: 15px;
-        }
-
-        /* แอนิเมชันตอนโชว์เนื้อหา */
-        details[open] ol {
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            border-bottom: 2px dashed #e0e0e0; /* ย้ายเส้นประมาไว้ใต้หัวข้อ */
         }
 
         /* ================= ตกแต่งรายการ ================= */
@@ -197,7 +150,7 @@
                 grid-template-columns: 1fr; 
             }
             .main-header {
-                font-size: 1.8em; /* ปรับลดจาก 2.4em เพื่อให้พอดีกับหน้าจอมือถือ */
+                font-size: 1.8em; 
             }
         }
 
@@ -234,99 +187,69 @@
         <div class="grid-layout">
             
             <div class="card-box">
-                <details open>
-                    <summary>
-                        <h2>Motor</h2>
-                        <span class="icon">▼</span>
-                    </summary>
-                    <ol>
-                        <li><a href="#">Normal Text Link 1</a></li>
-                        <li><a href="#">Normal Text Link 2</a></li>
-                        <li><a href="#">Normal Text Link 3</a></li>
-                        <li><a href="#">Normal Text Link 4</a></li>
-                    </ol>
-                </details>
+                <h2>Motor</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
             </div>
 
             <div class="card-box">
-                <details>
-                    <summary>
-                        <h2>Health</h2>
-                        <span class="icon">▼</span>
-                    </summary>
-                    <ol>
-                        <li><a href="#">Normal Text Link 1</a></li>
-                        <li><a href="#">Normal Text Link 2</a></li>
-                        <li><a href="#">Normal Text Link 3</a></li>
-                        <li><a href="#">Normal Text Link 4</a></li>
-                    </ol>
-                </details>
+                <h2>Health</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
             </div>
 
             <div class="card-box">
-                <details>
-                    <summary>
-                        <h2>Gadget</h2>
-                        <span class="icon">▼</span>
-                    </summary>
-                    <ol>
-                        <li><a href="#">Normal Text Link 1</a></li>
-                        <li><a href="#">Normal Text Link 2</a></li>
-                        <li><a href="#">Normal Text Link 3</a></li>
-                        <li><a href="#">Normal Text Link 4</a></li>
-                    </ol>
-                </details>
+                <h2>Gadget</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
             </div>
 
             <div class="card-box">
-                <details>
-                    <summary>
-                        <h2>Crescent Health</h2>
-                        <span class="icon">▼</span>
-                    </summary>
-                    <ol>
-                        <li><a href="#">Normal Text Link 1</a></li>
-                        <li><a href="#">Normal Text Link 2</a></li>
-                        <li><a href="#">Normal Text Link 3</a></li>
-                        <li><a href="#">Normal Text Link 4</a></li>
-                    </ol>
-                </details>
+                <h2>Crescent Health</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
             </div>
 
             <div class="card-box">
-                <details>
-                    <summary>
-                        <h2>Other</h2>
-                        <span class="icon">▼</span>
-                    </summary>
-                    <ol>
-                        <li><a href="#">Normal Text Link 1</a></li>
-                        <li><a href="#">Normal Text Link 2</a></li>
-                        <li><a href="#">Normal Text Link 3</a></li>
-                        <li><a href="#">Normal Text Link 4</a></li>
-                    </ol>
-                </details>
+                <h2>Other</h2>
+                <ol>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
+                    <li><a href="#">Normal Text Link 3</a></li>
+                    <li><a href="#">Normal Text Link 4</a></li>
+                </ol>
             </div>
 
             <div class="card-box">
-                <details>
-                    <summary>
-                        <h2>Customer Service</h2>
-                        <span class="icon">▼</span>
-                    </summary>
-                    <ol>
-                        <li><a href="https://docs.google.com/spreadsheets/d/1w_Lz5OQ1T9vmXEfYoMY_lKAXijsGrPSIaek3abYZ9wA/edit?gid=887972947#gid=887972947">ตารางงาน 2026</a></li>
-                        <li><a href="https://docs.google.com/spreadsheets/d/1QZWUVAdO0zYwZKdFaLB9XtNZsW-DrSsutSZhmgKKY4A/edit?gid=980555552#gid=980555552">ลงขอวันหยุด</a></li>
-                        <li><a href="https://docs.google.com/forms/d/1aUefV0ZnT3GeWp1P7-_E8lPEmC39cP5cbz7sbtxdUZA/previewResponse">ฟอร์ม QA โต้แย้งคะแนน</a></li>
-                        <li><a href="https://docs.google.com/spreadsheets/d/1k9IR1I3dpfMYgKj0pMXeyWIvRumt0_eKThc68pNcfkw/edit?gid=793324533#gid=793324533">เกณฑ์การให้คะแนน QA</a></li>
-                        <li><a href="https://calendar.google.com/calendar/u/0/r/week">ปฏิทินตารางเทรนนิ่ง</a></li>
-                        <li><a href="https://e-hr.easysunday.com/webtime/">ระบบลงลาพักร้อน/ลาป่วย</a></li>
-                        <li><a href="https://sundaytechnologies.my.salesforce.com/">Salesforce</a></li>
-                        <li><a href="https://th.ebaocloud.com/gi/html/index.html">ระบบ ebaocloud ดีชัวรันส์</a></li>
-                        <li><a href="https://docs.google.com/document/d/1dmXHzG1Ami-CeYBHaiLDxwqobQqE_VfZ_l5szQRgIHM/edit?tab=t.0">กฏระเบียบและข้อบังคับ</a></li>
-                        <li><a href="https://docs.google.com/spreadsheets/d/1-JoRH4_Orq9n5GKmYSsbohjKmO8E4Um42SVYnJTQntA/edit?gid=780507390#gid=780507390">KPI 2026</a></li>
-                    </ol>
-                </details>
+                <h2>Customer Service</h2>
+                <ol>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1w_Lz5OQ1T9vmXEfYoMY_lKAXijsGrPSIaek3abYZ9wA/edit?gid=887972947#gid=887972947">ตารางงาน 2026</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1QZWUVAdO0zYwZKdFaLB9XtNZsW-DrSsutSZhmgKKY4A/edit?gid=980555552#gid=980555552">ลงขอวันหยุด</a></li>
+                    <li><a href="https://docs.google.com/forms/d/1aUefV0ZnT3GeWp1P7-_E8lPEmC39cP5cbz7sbtxdUZA/previewResponse">ฟอร์ม QA โต้แย้งคะแนน</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1k9IR1I3dpfMYgKj0pMXeyWIvRumt0_eKThc68pNcfkw/edit?gid=793324533#gid=793324533">เกณฑ์การให้คะแนน QA</a></li>
+                    <li><a href="https://calendar.google.com/calendar/u/0/r/week">ปฏิทินตารางเทรนนิ่ง</a></li>
+                    <li><a href="https://e-hr.easysunday.com/webtime/">ระบบลงลาพักร้อน/ลาป่วย</a></li>
+                    <li><a href="https://sundaytechnologies.my.salesforce.com/">Salesforce</a></li>
+                    <li><a href="https://th.ebaocloud.com/gi/html/index.html">ระบบ ebaocloud ดีชัวรันส์</a></li>
+                    <li><a href="https://docs.google.com/document/d/1dmXHzG1Ami-CeYBHaiLDxwqobQqE_VfZ_l5szQRgIHM/edit?tab=t.0">กฏระเบียบและข้อบังคับ</a></li>
+                    <li><a href="https://docs.google.com/spreadsheets/d/1-JoRH4_Orq9n5GKmYSsbohjKmO8E4Um42SVYnJTQntA/edit?gid=780507390#gid=780507390">KPI 2026</a></li>
+                </ol>
             </div>
 
         </div>
