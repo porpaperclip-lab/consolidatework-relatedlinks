@@ -107,16 +107,23 @@
             align-self: start; 
         }
 
-        /* ================= หัวข้อและเนื้อหาในกล่อง ================= */
+        /* ================= หัวข้อ, คำอธิบาย และเนื้อหาในกล่อง ================= */
         .card-box h2 {
             width: 100%;
             text-align: center;
             font-size: 1.4em; 
             font-weight: 500; 
             color: var(--text-main);
+            margin: 0 0 5px 0; /* ลดระยะห่างด้านล่างให้ชิด caption มากขึ้น */
+        }
+
+        .card-box .caption {
+            text-align: center;
+            font-size: 0.95em;
+            color: #888888; /* สีเทาอ่อนลงหน่อยเพื่อให้ต่างจากตัวลิงก์ */
             margin: 0 0 25px 0;
             padding-bottom: 15px;
-            border-bottom: 2px dashed #e0e0e0; /* ย้ายเส้นประมาไว้ใต้หัวข้อ */
+            border-bottom: 2px dashed #e0e0e0; /* ย้ายเส้นประมาอยู่ใต้ caption */
         }
 
         /* ================= ตกแต่งรายการ ================= */
@@ -188,6 +195,7 @@
             
             <div class="card-box">
                 <h2>Motor</h2>
+                <p class="caption">รวมลิงก์ข้อมูลประกันภัยรถยนต์</p>
                 <ol>
                     <li><a href="#">Normal Text Link 1</a></li>
                     <li><a href="#">Normal Text Link 2</a></li>
@@ -198,6 +206,7 @@
 
             <div class="card-box">
                 <h2>Health</h2>
+                <p class="caption">ลิงก์ระบบและคู่มือประกันสุขภาพ</p>
                 <ol>
                     <li><a href="#">Normal Text Link 1</a></li>
                     <li><a href="#">Normal Text Link 2</a></li>
@@ -208,6 +217,7 @@
 
             <div class="card-box">
                 <h2>Gadget</h2>
+                <p class="caption">ข้อมูลประกันภัยอุปกรณ์อิเล็กทรอนิกส์</p>
                 <ol>
                     <li><a href="#">Normal Text Link 1</a></li>
                     <li><a href="#">Normal Text Link 2</a></li>
@@ -218,6 +228,7 @@
 
             <div class="card-box">
                 <h2>Crescent Health</h2>
+                <p class="caption">ข้อมูลเฉพาะสำหรับโปรเจกต์ Crescent</p>
                 <ol>
                     <li><a href="#">Normal Text Link 1</a></li>
                     <li><a href="#">Normal Text Link 2</a></li>
@@ -228,10 +239,10 @@
 
             <div class="card-box">
                 <h2>Other</h2>
+                <p class="caption">ลิงก์ระบบอื่นๆ ที่เกี่ยวข้อง</p>
                 <ol>
-                    <li><a href="https://th.ebaocloud.com/gi/html/index.html">ระบบ ebaocloud ดีชัวรันส์</a></li>
-                    <li><a href="https://192.11.0.11/IBSWeb/index.jsp">Gisweb </a></li>
-                    <li><a href="https://back-office.easysunday.com/en/">Back office (Retail)</a></li>
+                    <li><a href="#">Normal Text Link 1</a></li>
+                    <li><a href="#">Normal Text Link 2</a></li>
                     <li><a href="#">Normal Text Link 3</a></li>
                     <li><a href="#">Normal Text Link 4</a></li>
                 </ol>
@@ -239,6 +250,7 @@
 
             <div class="card-box">
                 <h2>Customer Service</h2>
+                <p class="caption">ตารางงานและระบบบริหารจัดการ</p>
                 <ol>
                     <li><a href="https://docs.google.com/spreadsheets/d/1w_Lz5OQ1T9vmXEfYoMY_lKAXijsGrPSIaek3abYZ9wA/edit?gid=887972947#gid=887972947">ตารางงาน 2026</a></li>
                     <li><a href="https://docs.google.com/spreadsheets/d/1QZWUVAdO0zYwZKdFaLB9XtNZsW-DrSsutSZhmgKKY4A/edit?gid=980555552#gid=980555552">ลงขอวันหยุด</a></li>
@@ -247,6 +259,7 @@
                     <li><a href="https://calendar.google.com/calendar/u/0/r/week">ปฏิทินตารางเทรนนิ่ง</a></li>
                     <li><a href="https://e-hr.easysunday.com/webtime/">ระบบลงลาพักร้อน/ลาป่วย</a></li>
                     <li><a href="https://sundaytechnologies.my.salesforce.com/">Salesforce</a></li>
+                    <li><a href="https://th.ebaocloud.com/gi/html/index.html">ระบบ ebaocloud ดีชัวรันส์</a></li>
                     <li><a href="https://docs.google.com/document/d/1dmXHzG1Ami-CeYBHaiLDxwqobQqE_VfZ_l5szQRgIHM/edit?tab=t.0">กฏระเบียบและข้อบังคับ</a></li>
                     <li><a href="https://docs.google.com/spreadsheets/d/1-JoRH4_Orq9n5GKmYSsbohjKmO8E4Um42SVYnJTQntA/edit?gid=780507390#gid=780507390">KPI 2026</a></li>
                 </ol>
